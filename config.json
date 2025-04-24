@@ -1,0 +1,7 @@
+{
+    "data": {
+      "root_dir": "./data",
+      "image_size": [224, 224]
+    }
+}
+  
