@@ -36,12 +36,17 @@ The dataloader example is continued and being applied each principle step-by-ste
 
 Initailly, there is a [single file](./1.s_principle/with_s.py) contains CConfigLoader, PathManager, and DotaLoader. While applying different principles step-by-step, the code is becoming lengthly. It is time to split the code based on the performed tasks by the classes. If anything that does not required, remove them. The code is presented in the [directory](./4.i_principle/). 
 
+## D - Dependency Inversion Principle (DIP)
+
+> High-level logic (e.g. `ConfigLoader`) should depend on abstract contracts (`ConfigReader`), not direct classes like `YamlConfigParser`.
+
 ## Additional information
 
 It is a self-explanatory tutorial on SOLID principle. Any new concept used in the tutoral are discussed in detail.
 
 * [Abstract method](./2.o_principle/README.md#abstract-method)
 * [Static method](./3.l_principle/README.md#static-method)
+* [Over-segregation](./4.i_principle/README.md#method-1)
 
 ## Conclusion
 
