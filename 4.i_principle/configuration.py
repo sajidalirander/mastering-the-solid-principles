@@ -42,15 +42,3 @@ class ConfigParserFactory:
             return JsonConfigParser()
         else:
             raise ValueError(f"Unsupported config file extension: {ext}")
-
-
-if __name__ == "__main__":
-    path = "./config.json"
-    parser = ConfigParserFactory.get_parser(path)
-    config_loader = ConfigLoader(parser, path)
-    config = config_loader.load()
-    if config is not None:
-        print("Loaded the config successfully.")
-    else:
-        print("Could not load.")
-        
