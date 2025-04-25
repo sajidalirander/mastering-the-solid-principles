@@ -54,6 +54,8 @@ class JsonConfigParser(ConfigParser):
             return json.load(file)
 ```
 
+
+### Abstract Method
 > If `@abstractmethod` unfamililar to new users, do not worry, An explanation is as follows: 
 
 In Python, abstract methods are defined using the `@abstractmethod` decorator from the abc (Abstract Base Classes) module. It is declared but not implemented in the base class. It only serves as a blueprint for child classes, forcing them to provide their own implementation.

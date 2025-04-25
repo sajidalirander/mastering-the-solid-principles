@@ -31,5 +31,5 @@ The dataloader example is continued and being applied each principle step-by-ste
 
 ## Additional information
 It is a self-explanatory tutorial on SOLID principle. Any new concept used in the tutoral are discussed in detail. 
-* [Abstract method](./o_principle/o_principle.md)
-* [Static method](./l_principle/l_principle.md)
+* [Abstract method](./o_principle/o_principle.md#abstract-method)
+* [Static method](./l_principle/l_principle.md#static-method)
