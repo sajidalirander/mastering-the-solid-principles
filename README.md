@@ -21,4 +21,15 @@ A practical example is implemented. Interested users can [click here](./s_princi
 ## O - Open/Closed Principle (OCP)
 > Open for extension but closed for modification. 
 
-In other words, able to add new features without changing old code. An [example](./o_principle/) is provided to compare the effect of using `o-principle` and without using it. 
+In other words, able to add new features without changing old code. An [example](./o_principle/) is provided to compare the effect of using `O-principle` and without using it. In addition, highlighted the concept of abstract method. 
+
+## L - Liskov Substitution Principle (LSP)
+> Subclasses must be substitutable without any changes to their base class. 
+
+The dataloader example is continued and being applied each principle step-by-step. The `L-principle` is applied to the taken example. A comprison results are presented [here](./l_principle/). Moreover, a discussion to static method is also provided at the end. 
+
+
+## Additional information
+It is a self-explanatory tutorial on SOLID principle. Any new concept used in the tutoral are discussed in detail. 
+* Abstract method
+* Static method

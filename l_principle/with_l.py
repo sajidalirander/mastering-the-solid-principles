@@ -1,3 +1,4 @@
+import os
 import json
 import yaml
 from abc import ABC, abstractmethod
@@ -30,16 +31,24 @@ class JsonConfigParser(ConfigParser):
             return json.load(file)
 
 
+class ConfigParserFactory:
+    @staticmethod
+    def get_parser(path):
+        ext = os.path.splitext(path)[-1].lower()
+        
+        if ext in [".yaml", ".yml"]:
+            return YamlConfigParser()
+        elif ext == ".json":
+            return JsonConfigParser()
+        else:
+            raise ValueError(f"Unsupported extension: {ext}")
+
+
 if __name__ == "__main__":
     path = "./config.json"
-    config_loader = ConfigLoader(JsonConfigParser(), path)
-    
-    # # or
-    # path = "./config.yaml"
-    # config_loader = ConfigLoader(YamlConfigParser(), path)
-    
+    parser = ConfigParserFactory.get_parser(path)
+    config_loader = ConfigLoader(parser, path)
     config = config_loader.load()
-    print(config)
     if config is not None:
         print("Loaded the config successfully.")
     else:
