@@ -38,7 +38,7 @@ Initailly, there is a [single file](./1.s_principle/with_s.py) contains CConfigL
 
 ## D - Dependency Inversion Principle (DIP)
 
-> High-level logic (e.g. `ConfigLoader`) should depend on abstract contracts (`ConfigReader`), not direct classes like `YamlConfigParser`.
+> High-level logic (e.g. `ConfigLoader`) should depend on abstract contracts (`ConfigReader`), not direct classes like `YamlConfigParser`. With configuration, `PathManager` also supports abstract base class method. A significant changes can be seen in the `DataLoader` as well. The source [code](/5.d_principle/) can be viewed and analyzed. 
 
 ## Additional information
 

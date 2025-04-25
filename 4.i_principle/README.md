@@ -5,7 +5,7 @@ In simple words:
 * Do not put everything in one big interface (class).
 * Instead, break interfaces into smaller, more specific ones that serve a particular purpose.
 
-## Method 1
+## __without ISP___
 The below `ConfigParser` interface is minimal and single-purpose. Advantages are:
 * Subclasses (`YamlConfigParser` and `JsonConfigParser`) implement only what they need
 * Clients (`ConfigLoader`) can rely on `load()` without worrying about how it is implemented.
@@ -33,6 +33,8 @@ class ConfigParser(ABC):
 `YamlConfigParser` and `JsonConfigParser` need to use `ConfigParser` interface, but only need `load_yaml()` and `load_json()` respectively. Problems aries:
 * `YamlConfigParser` and `JsonConfigParser` depend on more than it needs -- that would violate ISP.
 
+### __with ISP__
+### Method 1
 After following ISP, splitting the interface into smaller pieces:
 ```python
 from abc import ABC, abstractmethod
@@ -48,10 +50,10 @@ class JsonReader(ABC):
         pass
 ```
 
-This is a case of __over-segregation__ -- meaning splitting the interface too much, making it more complex than needed, and losing polymorphism. The above [method](#method-1) is more suitable in this case since each parser only implements what it needs (`load()`).
+This is a case of __over-segregation__ -- meaning splitting the interface too much, making it more complex than needed, and losing polymorphism. The above [method](#without-isp_) (`ConfigParser` with `load()`) is more suitable in this case since each parser only implements what it needs (`load()`).
 
 
-## Method 2
+### Method 2
 If `YamlConfigParser` and `JsonConfigParser` are as follows:
 ```python
 class YamlConfigParser(YamlReader):
