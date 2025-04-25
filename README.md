@@ -50,5 +50,5 @@ It is a self-explanatory tutorial on SOLID principle. Any new concept used in th
 |    SRP       |    Separated ConfigLoader, PathManager, DataLoader     |
 |    OCP       |    Added JSON loader without modifying existing code     |
 |    LSP       |    Swap YAML/JSON parsers safely by checking the extension     |
-|    ISP       |    Break large interfaces into smaller ones     |
+|    ISP       |    Break large interfaces into smaller ones and class segregation    |
 |    DIP       |    Inject dependencies via abstraction (not hardcoded)     |

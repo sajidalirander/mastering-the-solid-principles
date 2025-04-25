@@ -1,32 +1,34 @@
+# configuration.py
 import os
 import json
 import yaml
-from abc import ABC, abstractmethod
 
-    
-class ConfigParser(ABC):
-    @abstractmethod
-    def load(self, path):
-        pass
-    
+from file_handling import YamlReader, JsonReader
+
+
 
 class ConfigLoader:
     def __init__(self, parser, path):
         self.parser = parser
         self.path = path
 
-    def load(self):
-        return self.parser.load(self.path)
+    def read(self):
+        if isinstance(self.parser, YamlReader):
+            return self.parser.read_yaml(self.path)
+        elif isinstance(self.parser, JsonReader):
+            return self.parser.read_json(self.path)
+        else:
+            raise ValueError("Unsupported parser type.")
 
 
-class YamlConfigParser(ConfigParser):
-    def load(self, path):
+class YamlConfigParser(YamlReader):
+    def read_yaml(self, path):
         with open(path, "r") as file:
             return yaml.safe_load(file)        
 
 
-class JsonConfigParser(ConfigParser):
-    def load(self, path):
+class JsonConfigParser(JsonReader):
+    def read_json(self, path):
         with open(path, "r") as file:
             return json.load(file)
 
